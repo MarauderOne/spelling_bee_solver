@@ -124,43 +124,43 @@ textarea:focus, input:focus{
 
 .centre {
     position: absolute;
-    top: 144px;
+    top: 124px;
     left: 106px;
 }
 
 .top {
     position: absolute;
-    top: 54px;
+    top: 34px;
     left: 106px;
 }
 
 .topRight {
     position: absolute;
-    top: 99px;
+    top: 79px;
     left: 185px;
 }
 
 .bottomRight {
     position: absolute;
-    top: 189px;
+    top: 169px;
     left: 185px;
 }
 
 .bottom {
     position: absolute;
-    top: 234px;
+    top: 214px;
     left: 106px;
 }
 
 .bottomLeft {
     position: absolute;
-    top: 189px;
+    top: 169px;
     left: 27px;
 }
 
 .topLeft {
     position: absolute;
-    top: 99px;
+    top: 79px;
     left: 27px;
 }
 
