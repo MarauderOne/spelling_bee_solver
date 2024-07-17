@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"sort"
 	"github.com/gin-gonic/gin"
 	"github.com/golang/glog"
 )
@@ -157,6 +158,10 @@ func solveSpellingBee(gridData []CellData) (result string, countOfResults int, s
 	
 	glog.Info("Writing results count")
 	var resultCount int = answerList.Count()
+	glog.Info("Sorting results")
+	sort.Slice(answerList.Words, func(i, j int) bool {
+        return len(answerList.Words[i]) > len(answerList.Words[j])
+    })
 	glog.Info("Writing results")
 	results := strings.Join(answerList.Words, " ")
 	glog.Info("Returning solveSpellingBee function")
