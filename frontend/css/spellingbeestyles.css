@@ -1,0 +1,182 @@
+@font-face {
+    font-family: clearsans;
+    src: url(/spellingbeesolver/fonts/clear-sans/TTF/ClearSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: karnak;
+    src: url(/spellingbeesolver/fonts/karnak_pro/KarnakPro-Medium_400.otf);
+}
+
+.headerNav {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border-bottom: 2px rgb(211, 214, 218) solid;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto 125px;
+    grid-template-rows: minmax(45px, auto);
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+li {
+    float: left;
+  }
+
+li:hover {
+    text-decoration: underline;
+    background-color: black;
+    color: white;
+}
+  
+li a {
+    display: block;
+    padding: 8px;
+    font-size: 18px;
+  }
+
+a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.darkThemeToggle {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.darkThemeToggle span {
+    padding-right: 5px;
+}
+
+.darkThemeToggle span button {
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.title h1 {
+    width: 100%;
+    height: 100%;
+    font-family: Karnak;
+    font-size: 52px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h2 {
+    width: 33ch;
+    height: 100%;
+    max-width: 99%;
+    font-family: clearsans;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 27px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hexContainer {
+    position: relative;
+    width: 310px;
+    height: 373px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
+    width: 98px;
+    height: 84px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    font-family: clearsans;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: black;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.yellow {
+    border: 2px solid rgb(247, 218, 33);
+    background-color: rgb(247, 218, 33);
+}
+
+.grey {
+    border: 2px solid rgb(230, 230, 230);
+    background-color: rgb(230, 230, 230);
+}
+
+.centre {
+    position: absolute;
+    top: 144px;
+    left: 106px;
+}
+
+.top {
+    position: absolute;
+    top: 54px;
+    left: 106px;
+}
+
+.topRight {
+    position: absolute;
+    top: 99px;
+    left: 185px;
+}
+
+.bottomRight {
+    position: absolute;
+    top: 189px;
+    left: 185px;
+}
+
+.bottom {
+    position: absolute;
+    top: 234px;
+    left: 106px;
+}
+
+.bottomLeft {
+    position: absolute;
+    top: 189px;
+    left: 27px;
+}
+
+.topLeft {
+    position: absolute;
+    top: 99px;
+    left: 27px;
+}
+
+.answerbox {
+    width: auto;
+    height: auto;
+    min-height: 699px;
+    font-family: clearsans;
+    font-size: 18px;
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 0 auto;
+    border: 2px solid rgb(199, 199, 199);
+    background-color: white;
+    border-radius: 30px;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 10px 20px 10px;
+}

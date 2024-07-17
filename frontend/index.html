@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling Bee Solver</title>
+    <link rel="icon" type="image/x-icon" href="/spellingbeesolver/img/favicon.ico">
+    <link rel="stylesheet" href="/spellingbeesolver/css/pagelayout.css">
+    <link rel="stylesheet" href="/spellingbeesolver/css/styles.css">
+    <link rel="stylesheet" href="/spellingbeesolver/css/spellingbeestyles.css">
+    <link rel="stylesheet" href="/spellingbeesolver/css/keyboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/spellingbeesolver/js/spellingbeesolver.js" type="text/javascript"></script>
+</head>
+<body id="body">
+    <header id="headerNav" class="headerNav">
+        <ul>
+            <li><a href="https://theberridge.com/">theberridge.com</a></li>
+            <li><a href="https://github.com/MarauderOne/spelling_bee_solver/blob/main/README.md">About</a></li>
+        </ul>
+        <div class="darkThemeToggle">
+            <span><i class="fa fa-sun-o fa-2x"></i></span>
+            <span><button id="darkThemeToggleButton" class="fa fa-toggle-off fa-2x" onclick="toggleTheme()"></button></span>
+            <span><i class="fa fa-moon-o fa-2x"></i></span>
+        </div>
+    </header>
+    <div id="title" class="title">
+        <h1>Spelling Bee Solver</h1>
+    </div>
+    <main>
+        <section class="pageGrid">
+            <div id="pageFrame" class="pageFrame">
+                <div>
+                    <h2>
+                        Enter the letters from Spelling Bee:
+                    </h2>
+                </div>
+                <div class="hexContainer">
+                    <input type="text" id="box" class="box yellow centre" maxlength="1" readonly>
+                    <input type="text" id="box" class="box grey top" maxlength="1" readonly disabled>
+                    <input type="text" id="box" class="box grey topRight" maxlength="1" readonly disabled>
+                    <input type="text" id="box" class="box grey bottomRight" maxlength="1" readonly disabled>
+                    <input type="text" id="box" class="box grey bottom" maxlength="1" readonly disabled>
+                    <input type="text" id="box" class="box grey bottomLeft" maxlength="1" readonly disabled>
+                    <input type="text" id="box" class="box grey topLeft" maxlength="1" readonly disabled>
+                </div>
+                <div class="keyboard ">
+                    <div class="keyboardRow">
+                        <button type="button" character="q" class="keyboardKey">q</button>
+                        <button type="button" character="w" class="keyboardKey">w</button>
+                        <button type="button" character="e" class="keyboardKey">e</button>
+                        <button type="button" character="r" class="keyboardKey">r</button>
+                        <button type="button" character="t" class="keyboardKey">t</button>
+                        <button type="button" character="y" class="keyboardKey">y</button>
+                        <button type="button" character="u" class="keyboardKey">u</button>
+                        <button type="button" character="i" class="keyboardKey">i</button>
+                        <button type="button" character="o" class="keyboardKey">o</button>
+                        <button type="button" character="p" class="keyboardKey">p</button>
+                    </div>
+                    <div class="keyboardRow">
+                        <div class="half"> </div>
+                        <button type="button" character="a" class="keyboardKey">a</button>
+                        <button type="button" character="s" class="keyboardKey">s</button>
+                        <button type="button" character="d" class="keyboardKey">d</button>
+                        <button type="button" character="f" class="keyboardKey">f</button>
+                        <button type="button" character="g" class="keyboardKey">g</button>
+                        <button type="button" character="h" class="keyboardKey">h</button>
+                        <button type="button" character="j" class="keyboardKey">j</button>
+                        <button type="button" character="k" class="keyboardKey">k</button>
+                        <button type="button" character="l" class="keyboardKey">l</button>
+                        <div class="half"> </div>
+                    </div>
+                    <div class="keyboardRow">
+                        <button type="button" character="clear" class="keyboardKey oneAndAHalf">clear</button>
+                        <button type="button" character="z" class="keyboardKey">z</button>
+                        <button type="button" character="x" class="keyboardKey">x</button>
+                        <button type="button" character="c" class="keyboardKey">c</button>
+                        <button type="button" character="v" class="keyboardKey">v</button>
+                        <button type="button" character="b" class="keyboardKey">b</button>
+                        <button type="button" character="n" class="keyboardKey">n</button>
+                        <button type="button" character="m" class="keyboardKey">m</button>
+                        <button type="button" character="←" class="keyboardKey oneAndAHalf"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" class="game-icon" data-testid="icon-backspace"><path fill="var(--color-tone-1)" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path></svg></button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="pageFrame">
+                <div id="answerbox" class="answerbox">
+                    <p>
+                        Potential answers: <span id="resultsCount" ></span>
+                    </p>
+                    <p id="results" ></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
