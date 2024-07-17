@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();  // Prevent default behavior
         if (activeBox) {
             activeBox.value = '';  // Clear the contents of the active box
-            activeBox.classList.remove('grey', 'yellow', 'green');
             const previousBox = activeBox.previousElementSibling;
             if (previousBox && previousBox.classList.contains('box')) {
                 previousBox.focus();
@@ -66,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();  // Prevent default behavior
         document.querySelectorAll('.box').forEach(box => {
             box.value = '';
-            box.classList.remove('grey', 'yellow', 'green');
         });
         activeBox = firstBox;
         sendGridState();
@@ -96,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
         box.addEventListener('keydown', (event) => {
             if (event.key === 'Backspace' && box.value === '') {
                 event.preventDefault();  // Prevent default backspace behavior
-                activeBox.classList.remove('grey', 'yellow', 'green');
                 const previousBox = box.previousElementSibling;
                 if (previousBox && previousBox.classList.contains('box')) {
                     previousBox.focus();
@@ -131,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const boxes = document.querySelectorAll('.box');
         const gridData = Array.from(boxes).map(box => ({
             character: box.value.toUpperCase(),
-            color: box.className.split(' ').find(cls => ['grey', 'yellow', 'green'].includes(cls)) || ''
+            color: box.className.split(' ').find(cls => ['grey', 'yellow'].includes(cls)) || ''
         }));
     
         try {
@@ -157,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const boxes = document.querySelectorAll('.box');
     boxes.forEach(box => {
         box.addEventListener('input', limitInputToSingleChar);
-        box.addEventListener('click', () => changeBoxColor(box));
     });
 });
 
