@@ -143,18 +143,6 @@ func solveSpellingBee(gridData []CellData) (result string, countOfResults int, s
 	glog.Info("Revising answer list for grey box character(s)")
 	greyRegex = fmt.Sprintf("[%v]*", greyRegex)
 	answerList = reviseAnswerList(answerList, greyRegex)
-
-	if answerList.Count() == 79630 {
-		glog.Warning("After applying logic, answerList is still at maximum count")
-		solvingError = "Keep adding letters to generate potential answers..."
-		httpStatus = http.StatusBadRequest
-		glog.Info("Writing results count")
-		var resultCount int = answerList.Count()
-		glog.Info("Writing results")
-		results := strings.Join(answerList.Words, " ")
-		glog.Info("Returning solveSpellingBee function")
-		return results, resultCount, solvingError, httpStatus
-	}
 	
 	glog.Info("Writing results count")
 	var resultCount int = answerList.Count()
