@@ -35,8 +35,6 @@ flowchart TD
     V{"Have we reached\nthe end of the loop?"}
     Q[Revise answer list using\nregex pattern for Yellow box]
     R[Revise answer list using\nregex pattern for Grey boxes]
-    W{"Is the count of\nanswers still 79,630?"}
-    X([Tell the user to keep entering guess data])
     Y([Return the results to the user])
 
     A -->|POST to /letters| B
@@ -53,9 +51,7 @@ flowchart TD
     V -->|No| G
     V -->|Yes| Q
     Q --> R
-    R --> W
-    W -->|Yes| X
-    W -->|No| Y
+    R --> Y
 ```
 
 ## Prerequisites for Local Execution
