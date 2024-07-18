@@ -47,6 +47,37 @@ func TestSolveSpellingBee(t *testing.T) {
 		assert.Equal(t, float64(39), jsonResponse["resultCount"])
 	})
 
+	t.Run("Test ignoring blank values", func(t *testing.T) {
+		//Define a valid grid input
+		gridData := []CellData{
+			{Character: "N", Color: "yellow"},
+			{Character: "O", Color: "grey"},
+			{Character: "", Color: "grey"},
+			{Character: "V", Color: ""},
+			{Character: "", Color: "grey"},
+			{Character: "I", Color: ""},
+			{Character: "", Color: "grey"},
+		}
+
+		jsonData, _ := json.Marshal(gridData)
+		req, _ := http.NewRequest(http.MethodPost, "/letters", bytes.NewBuffer(jsonData))
+		req.Header.Set("Content-Type", "application/json")
+
+		httpResponse := httptest.NewRecorder()
+		webServer.ServeHTTP(httpResponse, req)
+
+		assert.Equal(t, http.StatusOK, httpResponse.Code)
+
+		var jsonResponse map[string]interface{}
+		err := json.Unmarshal(httpResponse.Body.Bytes(), &jsonResponse)
+		assert.NoError(t, err)
+
+		assert.NotEmpty(t, jsonResponse["result"])
+		assert.NotEmpty(t, jsonResponse["resultCount"])
+		assert.Equal(t, "NOON", jsonResponse["result"])
+		assert.Equal(t, float64(1), jsonResponse["resultCount"])
+	})
+
 	t.Run("Test minimal input", func(t *testing.T) {
 		//Define a valid grid input
 		gridData := []CellData{
